@@ -1,0 +1,215 @@
+.banner-section {
+   margin-top: -50px;
+   background-image: url('/images/tour-banner.jpg');
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+   height: 400px;
+   position: relative;
+}
+.banner-section::before {
+   content: '';
+   position: absolute;
+   inset: 0;
+   background-color: rgba(0,0,0,.45);
+}
+
+.banner-title {
+   position: relative;
+   color: var(--white-color);
+   font-size: 2.5rem;
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+   text-align: center;
+}
+
+.pagination-tour {
+   display: flex;
+   justify-content: center;
+   margin-top: 30px;
+}
+.pagination-tour .ant-pagination-item {
+   background: #eee;
+   border-radius: 50%;
+   overflow: hidden;
+}
+
+.pagination-tour .ant-pagination-item a:hover {
+   background: orange;
+}
+.pagination-tour .ant-pagination-item-active {
+   border-color: var(--secondary-color);
+}
+.pagination-tour .ant-pagination-item-active a {
+   background-color: var(--secondary-color);
+   color: #fff;
+}
+.pagination-tour .ant-pagination-item-active a:hover {
+   background-color: var(--secondary-color);
+   color: white;
+}
+.pagination-tour .ant-pagination-item-active:hover {
+   border-color: var(--secondary-color);
+}
+
+.pagination-tour .ant-pagination-prev,
+.pagination-tour .ant-pagination-next {
+   border-radius: 50%;
+   overflow: hidden;
+}
+.pagination-tour .ant-pagination-prev:hover,
+.pagination-tour .ant-pagination-next:hover {
+   background: orange;
+}
+
+.pagination-tour .ant-pagination-disabled:hover {
+   /* display: none; */
+   background-color: transparent;
+}
+
+/* -------- Tour detail --------  */
+/* .tour-content {
+
+} */
+.tour-image {
+   width: 100%;
+   overflow: hidden;
+   border-radius: 0.5rem;
+}
+.tour-image img {
+   display: block;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+.tour-info {
+   padding: 24px;
+   border-radius: 0.5rem;
+   border: 1px solid var(--secondary-color);
+}
+.tour-info .tour-location {
+   gap: 0.25rem;
+   font-size: 12.8px;
+   font-weight: 400;  
+   color: var(--text-color);
+}
+
+.tour-info .tour-info-gap {
+   display: flex;
+   gap: 16px 3rem !important ;
+   flex-wrap: wrap;
+}
+
+.tour-info > * {
+   font-weight: 500;
+}
+.tour-info h2 {
+   font-size: 1.5rem;
+   margin-bottom: 16px;
+}
+.tour-info h4 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+.tour-info p {
+   color: var(--text-color);
+    font-size: 1rem;
+    line-height: 30px;
+    margin-bottom: 16px;
+}
+
+.tour-review h2{
+   margin-bottom: 24px;
+}
+.tour-review .tour-rating {
+   color: var(--secondary-color);
+   font-size: 16px;
+}
+
+.review-form {
+   max-width: 100%;
+   box-shadow: none;
+   padding: 0.5rem;
+   border-radius: 2rem;
+   align-items: center;
+   margin-top: 24px;
+}
+.review-form .ant-btn{
+   padding: 6px 24px;
+   border-radius: 2rem;
+   height: fit-content;
+}
+.review-form .ant-input {
+   font-size: 16px;
+}
+
+/* ------ booking ------ */
+.booking {
+   padding: 2rem;
+   border-radius: 0.5rem;
+   border: 1px solid var(--secondary-color);
+   position: sticky;
+   top: 80px;
+}
+.booking-top {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding-bottom: 24px;
+   border-bottom: 1px solid #e5e7eb;
+}
+.booking-top h3 {
+   font-size: 1.2rem;
+   font-weight: 700;
+
+}
+.booking-top h3 span {
+   color: var(--text-color);
+    font-size: 1rem;
+    font-weight: 400;
+}
+.booking-rating {
+   color: var(--text-color);
+   font-size: 1rem;
+   font-weight: 500;
+}
+.booking-form {
+   padding-top: 1rem;
+}
+.booking-form h4 {
+   margin-bottom: 1rem;
+   font-size: 1.25rem;
+   font-weight: 500;
+   line-height: 1.2;
+}
+.booking-list .ant-list-item{
+   padding: 8px 0;
+   color: var(--text-color);
+   border-bottom: none;
+}
+.booking-list .ant-list-item .ant-list-item-meta-title {
+   color: var(--text-color)!important;
+}
+.booking-total-item,
+.booking-total-item .ant-list-item-meta-content .ant-list-item-meta-title {
+   color: var(--heading-color)!important;
+   font-size: 1rem!important;
+   font-weight: 700!important;
+}
+
+@media screen and (max-width: 767px) {
+   .booking,
+   .tour-info {
+      padding: 20px;
+   }
+   .tour-review h2 {
+      font-size: 20px;
+   }
+
+   .review-item-image {
+      width: 40px;
+      height: 40px;
+   }
+}

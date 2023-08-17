@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Island+Moments&family=Roboto:wght@300;400;500;700;900&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+.edit-button {
+  color: white;
+  background-color: orange;
+}
+
+.delete-button {
+  color: white;
+  background-color: red;
+}
+
+.create-button{
+  background-color: green;
+  color: white;
+}
+.create-button:hover{
+  font-weight: bold;
+}
+/* Tùy chỉnh màu chữ và nền cho tiêu đề cột */
+.column-title {
+  font-size: 1.2rem;
+}
+
+
+
+
+:root {
+  --white-color: #ffff;
+  --black-color: #0b2727;
+  --bg-primary: #ffff;
+  --primary-color: #ff7e01;
+  --secondary-color: #faa935;
+  --heading-color: #0b2727;
+  --text-color: #6e7074;
+
+}
+
+
+.btn {
+  display: inline-block;
+  cursor: pointer;
+  padding: 6px 12px;
+  font-size: 16px;
+  color: var(--heading-color);
+  font-weight: 400;
+  line-height: normal;
+}
+a.btn:hover {
+  color: inherit;
+}
+
+.btn-primary {
+  border-radius: 40px;
+  background-color: var(--secondary-color);
+  padding: 9px 24px;
+  color: var(--white-color);
+  font-weight: 500;
+  height: fit-content;
+}
+.ant-btn-primary.btn-primary:hover {
+  color: var(--white-color);
+  background-color: var(--secondary-color)!important;
+}
+a.btn-primary:hover {
+  color: var(--white-color);
+}
+.btn-secondary {
+  font-weight: 500;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1320px;
+  padding: 0 12px;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1320px ;
+  }
+}

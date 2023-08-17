@@ -1,0 +1,6 @@
+@import url('./normalize.css');
+@import url('./globalStyle.css');
+@import url('./layout.css');
+@import url('./auth.css');
+@import url('./home.css');
+@import url('./tour.css');

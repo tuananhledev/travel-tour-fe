@@ -1,0 +1,9 @@
+.subtitle {
+   background: var(--secondary-color);
+   border-radius: 50px;
+   font-size: 1.7rem;
+   font-weight: 500;
+   padding: 0 1rem 0 0.5rem;
+   font-family: 'Island Moments', cursive;
+   width: max-content;
+}

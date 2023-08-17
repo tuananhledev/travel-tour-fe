@@ -1,0 +1,45 @@
+.review-list {
+   margin-top: 30px;
+}
+.review-list .ant-list-item {
+   border-bottom: none;
+   padding: 8px 0;
+}
+.review-item-image {
+   width: 56px;
+   height: 56px;
+}
+.review-item-image img {
+   display: block;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+.review-rating {
+   display: flex;
+   align-items: center;
+   font-size: 16px;
+   color: var(--secondary-color);
+   gap: 2px;
+}
+
+.review-list .ant-list-item-meta-content {
+   padding-right: 1rem;
+}
+
+.review-list .ant-list-item-meta-title {
+   font-size: .8rem;
+   font-weight: 500;
+   margin-bottom: 0!important;
+   line-height: normal!important;
+}
+.review-list .ant-list-item-meta-description > *{
+   color: var(--text-color);
+   font-weight: 400;
+   font-size: .8rem;
+   line-height: normal;
+}
+.review-list .ant-list-item-meta-description p {
+   font-weight: 500;
+
+}
