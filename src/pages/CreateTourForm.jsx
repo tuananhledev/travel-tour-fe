@@ -25,6 +25,10 @@ const CreateTourForm = () => {
         }
     }
 
+    const handleBack = () => {
+        navigate(`/crud-admin`);
+    }
+
     return (
         <div className="container">
             <h1>Create Tour</h1>
@@ -63,8 +67,11 @@ const CreateTourForm = () => {
                 </Form.Item>
 
                 <Form.Item>
-                    <Button type="primary" htmlType="submit" loading={loading}>
+                    <Button type="primary" htmlType="submit" loading={loading} >
                         Create
+                    </Button>
+                    <Button type="primary" htmlType="submit" onClick={handleBack} style={{ marginLeft: "10px" }}>
+                        Back
                     </Button>
                 </Form.Item>
             </Form>

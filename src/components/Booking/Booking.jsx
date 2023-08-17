@@ -3,6 +3,9 @@ import React, { useMemo, useState, useContext } from "react";
 import { toast } from "react-toastify";
 import { useNavigate } from 'react-router-dom'
 import { AuthContext } from "../../context/AuthProvider";
+import axiosClient from "../../axios/axiosClient";
+import moment from "moment";
+
 
 const Booking = ({ tourData }) => {
    const [formBooking] = Form.useForm();
@@ -43,18 +46,43 @@ const Booking = ({ tourData }) => {
 
 
 
-   const { auth, setAuth } = useContext(AuthContext);
-   const handleBooking = (value) => {
-      console.log(value);
+   const { auth, cart, setCart } = useContext(AuthContext);
+   const handleBooking = async (values) => {
+      // console.log(values);
       if (!auth || auth === undefined || auth === null) {
          return alert('Please sign in')
       }
-      toast.success("Booking successful.");
-      formBooking.resetFields();
-      navigate('/');
-      setGuest(0);
+
+      try {
+         const dataRequest = {
+            userId: auth._id,
+            userEmail: auth.email,
+            tourName: tourData.title,
+            fullName: values.username,
+            guestSize: values.maxGroupSize,
+            phone: values.phone,
+            bookAt: moment(values.data).toDate(),
+         }
+
+         // console.log(dataRequest);
+
+         const result = await axiosClient.post('/booking', dataRequest)
+         console.log("RES: ", result);
+         handleSetLocalStorage(result.data.data);
+         toast.success("Booking successful.");
+         // formBooking.resetFields();
+         navigate('/');
+         setGuest(0);
+      } catch (error) {
+         toast.success("Booking error.");
+      }
    };
 
+   const handleSetLocalStorage = (item) => {
+      let carts = [...cart, item];
+      setCart(carts);
+      localStorage.setItem('cart', JSON.stringify(carts));
+   }
 
    return (
       <div className="booking-form">

@@ -41,7 +41,7 @@ const EditTourForm = () => {
             setLoading(true);
             const response = await axiosClient.put(`/tours/${tourId}`, values);
             setLoading(false);
-            notification.success({ message: "Tour updated successfully" });
+            notification.success({ message: "Updated thành công" });
             navigate(`/crud-admin`);
         } catch (error) {
             console.error("Error updating tour:", error);
@@ -55,7 +55,9 @@ const EditTourForm = () => {
         handleUpdate(values);
     };
 
-
+    const handleBack = () => {
+        navigate(`/crud-admin`);
+    }
 
     return (
         <div className="container">
@@ -98,6 +100,9 @@ const EditTourForm = () => {
                 <Form.Item>
                     <Button type="primary" htmlType="submit" loading={loading}>
                         Update
+                    </Button>
+                    <Button type="primary" htmlType="submit" onClick={handleBack} style={{ marginLeft: "10px" }}>
+                        Back
                     </Button>
                 </Form.Item>
             </Form>

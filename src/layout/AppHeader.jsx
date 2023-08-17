@@ -15,7 +15,7 @@ const AppHeader = () => {
    const navigate = useNavigate();
 
    const headerRef = useRef();
-   const { auth, setAuth } = useContext(AuthContext);
+   const { auth, setAuth, cart } = useContext(AuthContext);
    const [toggleMenu, setToggleMenu] = useState(false);
 
    useEffect(() => {
@@ -43,6 +43,7 @@ const AppHeader = () => {
       if (confirm("Bạn có chắc muốn thoát ?")) {
          setAuth(null);
          localStorage.removeItem("auth");
+         navigate('/');
       }
    };
 
@@ -85,7 +86,7 @@ const AppHeader = () => {
                   {auth ? (
                      <>
                         <h3 style={{ fontSize: "16px" }} className="emaillogin">{auth?.email}</h3>
-                        <Link to='/cart-tour' className="cart" counter={0}>
+                        <Link to='/cart-tour' className="cart" counter={cart.length}>
                            <AiOutlineShoppingCart style={{ marginTop: "20px" }} />
                         </Link>
                         {
